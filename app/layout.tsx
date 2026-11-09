@@ -9,10 +9,8 @@ import Footer from '@/components/layout/Footer';
 import ThemeProvider from '@/components/providers/ThemeProvider';
 import { SITE_CONFIG } from '@/lib/constants';
 import StructuredData from '@/components/seo/StructuredData';
-import ConsentBanner from '@/components/common/ConsentBanner';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-// Your AdSense publisher ID, e.g. "ca-pub-1234567890123456".
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
 const geistSans = Geist({
@@ -33,16 +31,15 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: `${SITE_CONFIG.name} - Free Online Tools`,
+    default: `${SITE_CONFIG.name} | Free Online Tools`,
     template: `%s | ${SITE_CONFIG.name}`,
   },
 
   description: SITE_CONFIG.description,
-
   applicationName: SITE_CONFIG.name,
 
   openGraph: {
-    title: `${SITE_CONFIG.name} - Free Online Tools`,
+    title: `${SITE_CONFIG.name} | Free Online Tools`,
     description: SITE_CONFIG.description,
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
@@ -51,7 +48,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary',
-    title: `${SITE_CONFIG.name} - Free Online Tools`,
+    title: `${SITE_CONFIG.name} | Free Online Tools`,
     description: SITE_CONFIG.description,
   },
 
@@ -60,9 +57,12 @@ export const metadata: Metadata = {
     follow: true,
   },
 
-  // Lets Google AdSense verify that you own this site.
   ...(ADSENSE_CLIENT
-    ? { other: { 'google-adsense-account': ADSENSE_CLIENT } }
+    ? {
+        other: {
+          'google-adsense-account': ADSENSE_CLIENT,
+        },
+      }
     : {}),
 };
 
@@ -74,33 +74,28 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Google AdSense official script */}
+        {ADSENSE_CLIENT && (
+          <Script
+            id="google-adsense"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        )}
+
+        {/* Google Analytics 4 */}
         {GA_ID && (
           <>
-            {/* Analytics starts in a denied state (Google Consent Mode)
-                and is only enabled after the visitor accepts. */}
-            <Script id="google-consent-default" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('consent', 'default', {
-                  analytics_storage: 'denied',
-                  ad_storage: 'denied',
-                  ad_user_data: 'denied',
-                  ad_personalization: 'denied'
-                });
-                try {
-                  if (window.localStorage.getItem('toolspace-consent') === 'granted') {
-                    gtag('consent', 'update', { analytics_storage: 'granted' });
-                  }
-                } catch (e) {}
-              `}
-            </Script>
             <Script
+              id="google-tag-manager"
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
             />
             <Script id="google-analytics" strategy="afterInteractive">
               {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_ID}');
               `}
@@ -113,7 +108,6 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
-          {GA_ID && <ConsentBanner />}
         </ThemeProvider>
       </body>
     </html>
