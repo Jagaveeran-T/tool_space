@@ -46,9 +46,17 @@ function saveChoice(choice: ConsentChoice) {
     // applies to the current page view below.
   }
 
-  (window as GtagWindow).gtag?.('consent', 'update', {
+  const gtag = (window as GtagWindow).gtag;
+
+  gtag?.('consent', 'update', {
     analytics_storage: choice,
   });
+
+  if (choice === 'granted') {
+    // The page view that loaded before consent was recorded without
+    // cookies, so send one now that the visitor has accepted.
+    gtag?.('event', 'page_view');
+  }
 
   window.dispatchEvent(new Event(CHANGE_EVENT));
 }
