@@ -1,0 +1,9 @@
+# ads.txt - tells ad buyers which sellers may sell ad space on this site.
+#
+# After AdSense approves your account, replace this comment with the line
+# AdSense gives you under Sites > ads.txt. It looks like this (use YOUR
+# publisher ID, which starts with "pub-"):
+#
+#   google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+#
+# Do not publish a line with a made-up publisher ID.
