@@ -20,6 +20,7 @@ const ADSENSE_CLIENT =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim() ||
   'ca-pub-1257782109778947';
 
+// Google Fonts
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -30,6 +31,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+// Website SEO metadata
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
 
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
     google: 'qE712S-6gcMSrwcjyC9sGcryhPvxFuQ_gJPB5YyEOTA',
   },
 
-  // Website SEO
+  // Website title
   title: {
     default: `${SITE_CONFIG.name} | Free Online Tools`,
     template: `%s | ${SITE_CONFIG.name}`,
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
 
-  // Google AdSense site verification
+  // Google AdSense account verification
   other: {
     'google-adsense-account': ADSENSE_CLIENT,
   },
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // Twitter SEO
+  // Twitter
   twitter: {
     card: 'summary',
     title: `${SITE_CONFIG.name} | Free Online Tools`,
@@ -93,7 +95,7 @@ export default function RootLayout({
         <Script
           id="google-adsense"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           crossOrigin="anonymous"
         />
 
@@ -120,8 +122,10 @@ export default function RootLayout({
           </>
         )}
 
+        {/* Website application */}
         <ThemeProvider>
           <StructuredData />
+
           <Header />
 
           <main className="min-h-screen">
