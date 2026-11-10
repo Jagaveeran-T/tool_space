@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -11,16 +10,12 @@ import ThemeProvider from '@/components/providers/ThemeProvider';
 import { SITE_CONFIG } from '@/lib/constants';
 import StructuredData from '@/components/seo/StructuredData';
 
-// Google Analytics 4
+// Environment variables
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.trim();
-
-// Google AdSense publisher ID
-// Cloudflare Production environment variable is preferred.
 const ADSENSE_CLIENT =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim() ||
   'ca-pub-1257782109778947';
 
-// Google Fonts
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -31,16 +26,13 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-// Website SEO metadata
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
 
-  // Google Search Console verification
   verification: {
     google: 'qE712S-6gcMSrwcjyC9sGcryhPvxFuQ_gJPB5YyEOTA',
   },
 
-  // Website title
   title: {
     default: `${SITE_CONFIG.name} | Free Online Tools`,
     template: `%s | ${SITE_CONFIG.name}`,
@@ -49,12 +41,13 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
 
-  // Google AdSense account verification
-  other: {
-    'google-adsense-account': ADSENSE_CLIENT,
-  },
+  // Verification meta tag: <meta name="google-adsense-account" content="..." />
+  other: ADSENSE_CLIENT
+    ? {
+        'google-adsense-account': ADSENSE_CLIENT,
+      }
+    : {},
 
-  // Open Graph
   openGraph: {
     title: `${SITE_CONFIG.name} | Free Online Tools`,
     description: SITE_CONFIG.description,
@@ -63,14 +56,12 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // Twitter
   twitter: {
     card: 'summary',
     title: `${SITE_CONFIG.name} | Free Online Tools`,
     description: SITE_CONFIG.description,
   },
 
-  // Search engine indexing
   robots: {
     index: true,
     follow: true,
@@ -88,18 +79,20 @@ export default function RootLayout({
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-      <head>
-        {/* Google AdSense verification code */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
-        />
-      </head>
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google AdSense Script */}
+        {ADSENSE_CLIENT && (
+          <Script
+            id="google-adsense"
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
+
         {/* Google Analytics 4 */}
         {GA_ID && (
           <>
@@ -108,7 +101,6 @@ export default function RootLayout({
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
             />
-
             <Script
               id="google-analytics"
               strategy="afterInteractive"
@@ -123,16 +115,10 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Website application */}
         <ThemeProvider>
           <StructuredData />
-
           <Header />
-
-          <main className="min-h-screen">
-            {children}
-          </main>
-
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
