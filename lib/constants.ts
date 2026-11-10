@@ -1,15 +1,13 @@
 // The public site URL is used for canonical links, Open Graph URLs,
 // the sitemap and structured data. In production it MUST be configured,
 // otherwise every one of those would point to localhost.
-const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(
-  /\/+$/,
-  '',
-);
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ?.trim()
+  .replace(/\/+$/, '');
 
 if (!configuredSiteUrl && process.env.NODE_ENV === 'production') {
   throw new Error(
-    'NEXT_PUBLIC_SITE_URL is not set. Set it to your public site URL ' +
-      '(for example https://your-domain.com) before building for production.',
+    'NEXT_PUBLIC_SITE_URL is not set. Set it to your public site URL (for example https://your-domain.com) before building for production.',
   );
 }
 
