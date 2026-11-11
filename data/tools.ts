@@ -128,6 +128,48 @@ export const tools: Tool[] = [
     ],
     createdAt: '2026-11-07',
   },
+    {
+    id: 'decimal-to-hex',
+    name: 'Decimal to Hex Converter',
+    slug: '/converters/decimal-to-hex',
+    category: 'Converters',
+    description:
+      'Convert decimal numbers to hexadecimal instantly, including very large and negative numbers.',
+    icon: 'code',
+    status: 'active',
+    featured: false,
+    popular: true,
+    keywords: [
+      'decimal to hex',
+      'decimal to hexadecimal',
+      'hex converter',
+      'number conversion',
+      'base 10 to base 16',
+      'hexadecimal',
+    ],
+    createdAt: '2026-11-10',
+  },
+  {
+    id: 'hex-to-decimal',
+    name: 'Hex to Decimal Converter',
+    slug: '/converters/hex-to-decimal',
+    category: 'Converters',
+    description:
+      'Convert hexadecimal numbers to decimal instantly, with an optional 0x prefix and large number support.',
+    icon: 'arrow-left-right',
+    status: 'active',
+    featured: false,
+    popular: false,
+    keywords: [
+      'hex to decimal',
+      'hexadecimal to decimal',
+      'hex converter',
+      'number conversion',
+      'base 16 to base 10',
+      '0x',
+    ],
+    createdAt: '2026-11-10',
+  },
 ];
 
 export function getActiveTools() {

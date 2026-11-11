@@ -12,11 +12,11 @@ import { categories } from '@/data/categories';
 
 describe('Tool Registry', () => {
   it('should contain every registered tool', () => {
-    expect(tools).toHaveLength(6);
+    expect(tools).toHaveLength(8);
   });
 
   it('should return active tools', () => {
-    expect(getActiveTools().length).toBe(6);
+    expect(getActiveTools().length).toBe(8);
   });
 
   it('should give every tool a unique id and slug', () => {
