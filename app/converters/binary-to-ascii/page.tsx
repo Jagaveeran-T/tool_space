@@ -7,7 +7,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 const pageUrl = `${SITE_CONFIG.url}/converters/binary-to-ascii`;
 
-const pageTitle = "Binary to Text Converter - Binary, ASCII & UTF-8";
+const pageTitle = "Binary to Text Converter - ASCII & UTF-8";
 
 const pageDescription =
   "Convert binary to text and text to binary online. Convert decimal, octal and hexadecimal values using ASCII, UTF-8 and other character encodings.";

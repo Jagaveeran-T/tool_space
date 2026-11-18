@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export default function AgeInfo() {
   return (
     <section className="mt-12 space-y-8">
@@ -220,32 +221,46 @@ export default function AgeInfo() {
         </h2>
 
         <p className="mt-3 leading-7 text-muted-foreground">
-          ToolSpace provides free online calculators and converters
+          GetToolSpace provides free online calculators and converters
           designed to make everyday calculations easier. Explore
           our other tools to find useful solutions for common tasks.
         </p>
 
         <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-          <a
+          <Link
+            href="/calculators/date-difference-calculator"
+            className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+          >
+            Date Difference Calculator
+          </Link>
+
+          <Link
+            href="/calculators/percentage-calculator"
+            className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+          >
+            Percentage Calculator
+          </Link>
+
+          <Link
+            href="/calculators/grade-calculator"
+            className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
+          >
+            Grade Calculator
+          </Link>
+
+          <Link
             href="/calculators"
             className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
           >
-            Explore Calculators
-          </a>
+            All Calculators
+          </Link>
 
-          <a
-            href="/converters"
-            className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
-          >
-            Explore Converters
-          </a>
-
-          <a
+          <Link
             href="/tools"
             className="text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
           >
             View All Tools
-          </a>
+          </Link>
         </div>
       </div>
     </section>

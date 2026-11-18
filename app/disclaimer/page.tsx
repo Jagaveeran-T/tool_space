@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer | ToolSpace',
+  title: 'Disclaimer',
   description:
-    'Read the ToolSpace disclaimer regarding the accuracy, reliability and use of our online calculators, converters and tools.',
+    'Read the GetToolSpace disclaimer regarding the accuracy, reliability and use of our online calculators, converters and tools.',
   alternates: {
     canonical: `${SITE_CONFIG.url}/disclaimer`,
   },
   openGraph: {
-    title: 'Disclaimer | ToolSpace',
+    title: 'Disclaimer | GetToolSpace',
     description:
-      'Important information about using ToolSpace calculators, converters and online tools.',
+      'Important information about using GetToolSpace calculators, converters and online tools.',
     url: `${SITE_CONFIG.url}/disclaimer`,
     siteName: SITE_CONFIG.name,
     type: 'website',
@@ -45,7 +45,7 @@ export default function DisclaimerPage() {
           </h2>
 
           <p className={paragraphClass}>
-            The information and tools available on ToolSpace are provided
+            The information and tools available on GetToolSpace are provided
             for general informational and educational purposes only.
             We offer online calculators, converters and other utilities
             to help users perform everyday tasks.
@@ -77,7 +77,7 @@ export default function DisclaimerPage() {
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace does not provide professional, legal, financial,
+            GetToolSpace does not provide professional, legal, financial,
             medical or other specialist advice. Our tools and information
             should not replace advice from qualified professionals.
           </p>
@@ -96,7 +96,7 @@ export default function DisclaimerPage() {
 
           <p className={paragraphClass}>
             You are responsible for how you use the tools and information
-            available on ToolSpace. You should check the inputs and verify
+            available on GetToolSpace. You should check the inputs and verify
             important outputs before using them for personal, academic,
             business or professional purposes.
           </p>
@@ -108,7 +108,7 @@ export default function DisclaimerPage() {
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace may contain links to third-party websites or services.
+            GetToolSpace may contain links to third-party websites or services.
             These links are provided for convenience. We do not control
             or guarantee the accuracy, availability or content of external
             websites.
@@ -121,14 +121,14 @@ export default function DisclaimerPage() {
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace may display advertisements provided by third-party
+            GetToolSpace may display advertisements provided by third-party
             advertising services, including Google AdSense, when enabled.
             Advertisements and their linked websites are managed by their
             respective providers.
           </p>
 
           <p className={`mt-3 ${paragraphClass}`}>
-            The appearance of an advertisement does not mean that ToolSpace
+            The appearance of an advertisement does not mean that GetToolSpace
             endorses or guarantees the advertised product or service.
           </p>
         </section>
@@ -139,7 +139,7 @@ export default function DisclaimerPage() {
           </h2>
 
           <p className={paragraphClass}>
-            To the extent permitted by applicable law, ToolSpace and its
+            To the extent permitted by applicable law, GetToolSpace and its
             operators shall not be liable for losses or damages arising
             from the use of, inability to use, or reliance on the website,
             its tools or their results.

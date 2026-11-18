@@ -6,14 +6,14 @@ import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Percentage Calculator - Percent Of, Change, Increase & Decrease',
+  title: 'Percentage Calculator - % Of, Change, Discount',
   description:
     'Free online percentage calculator. Find a percentage of a number, work out percentage change, and increase or decrease a value by a percentage.',
   alternates: {
     canonical: '/calculators/percentage-calculator',
   },
   openGraph: {
-    title: 'Percentage Calculator - Percent Of, Change, Increase & Decrease',
+    title: 'Percentage Calculator - % Of, Change, Discount',
     description:
       'Free online percentage calculator. Find a percentage of a number, work out percentage change, and increase or decrease a value by a percentage.',
     url: `${SITE_CONFIG.url}/calculators/percentage-calculator`,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Percentage Calculator - Percent Of, Change, Increase & Decrease',
+    title: 'Percentage Calculator - % Of, Change, Discount',
     description:
       'Free online percentage calculator. Find a percentage of a number, work out percentage change, and increase or decrease a value by a percentage.',
   },

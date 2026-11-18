@@ -1,5 +1,5 @@
-
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { getToolsByCategory } from '@/data/tools';
 import ToolGrid from '@/components/tools/ToolGrid';
@@ -55,8 +55,26 @@ export default function ConvertersPage() {
           Online Converters
         </h1>
 
-        <p className="mt-3 text-muted-foreground">
-          Convert binary, numbers and text with useful online tools.
+        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+          These converters translate numbers and text between formats
+          used in computing. The Binary to Text Converter turns binary
+          code into readable characters using ASCII or UTF-8 and also
+          converts text back to binary. The Decimal to Hex and Hex to
+          Decimal converters move whole numbers between base 10 and
+          base 16, including very large values and the optional 0x
+          prefix.
+        </p>
+
+        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+          Each converter has a guide that explains the method step by
+          step with examples. Looking for everyday maths instead? See our{' '}
+          <Link
+            href="/calculators"
+            className="font-medium text-primary underline-offset-4 hover:underline"
+          >
+            calculators
+          </Link>
+          .
         </p>
 
         <div className="mt-8">

@@ -4,25 +4,25 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | ToolSpace',
+  title: 'Contact Us',
   description:
-    'Contact ToolSpace for questions, feedback, suggestions, or issues related to our free online calculators and converters.',
+    'Contact GetToolSpace for questions, feedback, suggestions, or issues related to our free online calculators and converters.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Us | ToolSpace',
+    title: 'Contact Us | GetToolSpace',
     description:
-      'Get in touch with ToolSpace for questions, feedback, and suggestions.',
+      'Get in touch with GetToolSpace for questions, feedback, and suggestions.',
     url: `${SITE_CONFIG.url}/contact`,
     siteName: SITE_CONFIG.name,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Contact Us | ToolSpace',
+    title: 'Contact Us | GetToolSpace',
     description:
-      'Contact ToolSpace for questions, feedback, and suggestions.',
+      'Contact GetToolSpace for questions, feedback, and suggestions.',
   },
 };
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
 
           <p className="text-muted-foreground">
             We would love to hear from you. If you have questions, feedback,
-            suggestions, or encounter any issues while using ToolSpace,
+            suggestions, or encounter any issues while using GetToolSpace,
             feel free to contact us.
           </p>
         </header>
@@ -111,7 +111,7 @@ export default function ContactPage() {
 
           <p className="text-muted-foreground">
             We value your feedback and continuously work to improve
-            ToolSpace. Your suggestions help us make our tools more useful
+            GetToolSpace. Your suggestions help us make our tools more useful
             and accessible.
           </p>
         </section>

@@ -1,28 +1,27 @@
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'About Us | ToolSpace',
+  title: 'About Us',
   description:
-    'Learn about ToolSpace, a free online platform offering useful calculators, converters, and everyday tools designed to make common tasks easier.',
+    'Learn about GetToolSpace, a free online platform offering useful calculators, converters, and everyday tools designed to make common tasks easier.',
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: 'About Us | ToolSpace',
+    title: 'About Us | GetToolSpace',
     description:
-      'Learn about ToolSpace and our collection of free online calculators, converters, and useful everyday tools.',
+      'Learn about GetToolSpace and our collection of free online calculators, converters, and useful everyday tools.',
     url: `${SITE_CONFIG.url}/about`,
     siteName: SITE_CONFIG.name,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'About Us | ToolSpace',
+    title: 'About Us | GetToolSpace',
     description:
-      'Discover free online calculators, converters, and useful tools at ToolSpace.',
+      'Discover free online calculators, converters, and useful tools at GetToolSpace.',
   },
 };
 
@@ -32,11 +31,11 @@ export default function AboutPage() {
       <article className="space-y-10">
         <header className="space-y-4">
           <h1 className="text-3xl font-bold text-foreground">
-            About ToolSpace
+            About GetToolSpace
           </h1>
 
           <p className="text-lg leading-8 text-muted-foreground">
-            ToolSpace is a collection of free online calculators,
+            GetToolSpace is a collection of free online calculators,
             converters, and useful tools designed to make everyday
             tasks simpler, faster, and more convenient.
           </p>
@@ -66,7 +65,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="leading-8 text-muted-foreground">
-            ToolSpace currently offers tools across different
+            GetToolSpace currently offers tools across different
             categories, including:
           </p>
 
@@ -83,7 +82,8 @@ export default function AboutPage() {
               <strong className="text-foreground">
                 Converters:
               </strong>{' '}
-              Convert binary values into readable ASCII text.
+              Convert binary to text, and convert whole numbers
+              between decimal and hexadecimal.
             </li>
 
             <li>
@@ -104,6 +104,24 @@ export default function AboutPage() {
             </Link>
           </p>
         </section>
+
+        {SITE_CONFIG.owner.name && (
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold text-foreground">
+              Who Runs GetToolSpace
+            </h2>
+
+            <p className="leading-8 text-muted-foreground">
+              GetToolSpace is run by {SITE_CONFIG.owner.name}.
+            </p>
+
+            {SITE_CONFIG.owner.about && (
+              <p className="leading-8 text-muted-foreground">
+                {SITE_CONFIG.owner.about}
+              </p>
+            )}
+          </section>
+        )}
 
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-foreground">
@@ -149,7 +167,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="leading-8 text-muted-foreground">
-            We work to keep ToolSpace useful, accessible, and
+            We work to keep GetToolSpace useful, accessible, and
             reliable. We welcome feedback and suggestions that
             help us improve our tools and provide a better
             experience for visitors.

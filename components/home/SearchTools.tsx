@@ -5,7 +5,13 @@ import { Search, X } from 'lucide-react';
 import { tools } from '@/data/tools';
 import ToolCard from '@/components/tools/ToolCard';
 
-export default function SearchTools() {
+type Props = {
+  className?: string;
+};
+
+export default function SearchTools({
+  className = 'container-main relative z-20 -mt-5',
+}: Props) {
   const [query, setQuery] = useState('');
 
   const filteredTools = useMemo(() => {
@@ -33,7 +39,7 @@ export default function SearchTools() {
   }, [query]);
 
   return (
-    <section className="container-main relative z-20 -mt-5">
+    <section className={className}>
       <div className="mx-auto max-w-3xl rounded-2xl border border-border bg-card p-3 shadow-xl shadow-primary/5">
         <div className="flex items-center gap-3 px-3">
           <Search className="shrink-0 text-muted-foreground" size={21} />

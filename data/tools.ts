@@ -1,4 +1,3 @@
-
 export type Tool = {
   id: string;
   name: string;
@@ -11,6 +10,7 @@ export type Tool = {
   popular: boolean;
   keywords: string[];
   createdAt: string;
+  updatedAt: string;
 };
 
 export const tools: Tool[] = [
@@ -35,6 +35,7 @@ export const tools: Tool[] = [
       'age calculator',
     ],
     createdAt: '2026-11-01',
+    updatedAt: '2026-11-01',
   },
   {
     id: 'grade-calculator',
@@ -49,6 +50,7 @@ export const tools: Tool[] = [
     popular: true,
     keywords: ['grade', 'marks', 'percentage', 'GPA', 'exam'],
     createdAt: '2026-11-01',
+    updatedAt: '2026-11-01',
   },
   {
     id: 'binary-to-ascii',
@@ -63,6 +65,7 @@ export const tools: Tool[] = [
     popular: true,
     keywords: ['binary', 'ASCII', 'text', 'number conversion'],
     createdAt: '2026-11-01',
+    updatedAt: '2026-11-01',
   },
   {
     id: 'percentage-calculator',
@@ -85,6 +88,7 @@ export const tools: Tool[] = [
       'discount',
     ],
     createdAt: '2026-11-07',
+    updatedAt: '2026-11-07',
   },
   {
     id: 'date-difference-calculator',
@@ -106,6 +110,7 @@ export const tools: Tool[] = [
       'duration',
     ],
     createdAt: '2026-11-07',
+    updatedAt: '2026-11-07',
   },
   {
     id: 'word-counter',
@@ -127,8 +132,9 @@ export const tools: Tool[] = [
       'text',
     ],
     createdAt: '2026-11-07',
+    updatedAt: '2026-11-07',
   },
-    {
+  {
     id: 'decimal-to-hex',
     name: 'Decimal to Hex Converter',
     slug: '/converters/decimal-to-hex',
@@ -148,6 +154,7 @@ export const tools: Tool[] = [
       'hexadecimal',
     ],
     createdAt: '2026-11-10',
+    updatedAt: '2026-11-10',
   },
   {
     id: 'hex-to-decimal',
@@ -169,6 +176,7 @@ export const tools: Tool[] = [
       '0x',
     ],
     createdAt: '2026-11-10',
+    updatedAt: '2026-11-10',
   },
 ];
 

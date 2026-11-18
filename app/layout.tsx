@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -16,6 +15,29 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.trim();
 const ADSENSE_CLIENT =
   process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim() ||
   'ca-pub-1257782109778947';
+
+// Regions where consent must be collected before ad or analytics storage
+// is used (EEA, United Kingdom and Switzerland).
+const CONSENT_REGIONS = [
+  'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+  'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL',
+  'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'CH',
+];
+
+// Google Consent Mode defaults. This must run before the AdSense and
+// Google Analytics scripts below.
+const CONSENT_DEFAULTS = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    region: ${JSON.stringify(CONSENT_REGIONS)},
+    wait_for_update: 500
+  });
+`;
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -42,15 +64,12 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
 
-  // Google AdSense + Bing Webmaster Tools verification
-  other: {
-    ...(ADSENSE_CLIENT
-      ? {
-          'google-adsense-account': ADSENSE_CLIENT,
-        }
-      : {}),
-    'msvalidate.01': 'ED6956B0512BFECE7D9FF2384BF818FE',
-  },
+  // Verification meta tag: <meta name="google-adsense-account" content="..." />
+  other: ADSENSE_CLIENT
+    ? {
+        'google-adsense-account': ADSENSE_CLIENT,
+      }
+    : {},
 
   openGraph: {
     title: `${SITE_CONFIG.name} | Free Online Tools`,
@@ -86,6 +105,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Consent Mode defaults: must come before the Google scripts */}
+        <Script id="consent-defaults" strategy="beforeInteractive">
+          {CONSENT_DEFAULTS}
+        </Script>
+
         {/* Google AdSense Script */}
         {ADSENSE_CLIENT && (
           <Script

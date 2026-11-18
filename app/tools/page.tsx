@@ -1,15 +1,15 @@
-
 import type { Metadata } from 'next';
 
 import { getActiveTools } from '@/data/tools';
 import ToolGrid from '@/components/tools/ToolGrid';
+import SearchTools from '@/components/home/SearchTools';
 import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'All Online Tools',
   description:
-    "Browse ToolSpace's collection of free online calculators, converters and useful tools.",
+    "Browse GetToolSpace's free online calculators, converters and text tools, and search for the one you need.",
 
   alternates: {
     canonical: '/tools',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'All Online Tools',
     description:
-      "Browse ToolSpace's collection of free online calculators, converters and useful tools.",
+      "Browse GetToolSpace's free online calculators, converters and text tools, and search for the one you need.",
     url: `${SITE_CONFIG.url}/tools`,
     siteName: SITE_CONFIG.name,
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'All Online Tools',
     description:
-      "Browse ToolSpace's collection of free online calculators, converters and useful tools.",
+      "Browse GetToolSpace's free online calculators, converters and text tools, and search for the one you need.",
   },
 };
 
@@ -55,9 +55,15 @@ export default function AllToolsPage() {
           All Tools
         </h1>
 
-        <p className="mt-3 text-muted-foreground">
-          Discover all our available online tools.
+        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+          GetToolSpace offers free calculators, converters and text
+          tools that run in your browser. Use the search box to find a
+          tool by name or topic, or browse the full list below. Every
+          tool has a written guide explaining how it works, with
+          examples you can check yourself.
         </p>
+
+        <SearchTools className="relative z-20 mt-6" />
 
         <div className="mt-8">
           <ToolGrid tools={allTools} />

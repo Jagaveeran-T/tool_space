@@ -5,7 +5,7 @@ import GradeCalculator from "@/components/calculators/grade-calculator/GradeCalc
 import BreadcrumbStructuredData from "@/components/seo/BreadcrumbStructuredData";
 import { SITE_CONFIG } from "@/lib/constants";
 
-const pageTitle = "Grade Calculator - Weighted Grades, Final Exam & GPA";
+const pageTitle = "Grade Calculator - Weighted Grade & Final Exam";
 
 const pageDescription =
   "Calculate weighted grades, plan your final grade, find the exam score you need, and calculate your GPA with this free online grade calculator.";

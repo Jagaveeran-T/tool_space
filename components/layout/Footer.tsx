@@ -5,6 +5,9 @@ import ScrollToTopLink from '@/components/common/ScrollToTopLink';
 const mainLinks = [
   { name: 'Home', href: '/' },
   { name: 'All Tools', href: '/tools' },
+  { name: 'Calculators', href: '/calculators' },
+  { name: 'Converters', href: '/converters' },
+  { name: 'Text Tools', href: '/text-tools' },
   { name: 'About Us', href: '/about' },
   { name: 'Contact Us', href: '/contact' },
 ];
@@ -77,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} ToolSpace. All rights reserved.
+          © {new Date().getFullYear()} GetToolSpace. All rights reserved.
         </div>
       </div>
     </footer>

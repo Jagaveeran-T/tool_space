@@ -6,14 +6,14 @@ import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Word Counter - Count Words, Characters and Reading Time',
+  title: 'Word Counter - Words, Characters, Reading Time',
   description:
     'Free online word counter. Count words, characters, sentences and paragraphs, and estimate reading and speaking time as you type.',
   alternates: {
     canonical: '/text-tools/word-counter',
   },
   openGraph: {
-    title: 'Word Counter - Count Words, Characters and Reading Time',
+    title: 'Word Counter - Words, Characters, Reading Time',
     description:
       'Free online word counter. Count words, characters, sentences and paragraphs, and estimate reading and speaking time as you type.',
     url: `${SITE_CONFIG.url}/text-tools/word-counter`,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Word Counter - Count Words, Characters and Reading Time',
+    title: 'Word Counter - Words, Characters, Reading Time',
     description:
       'Free online word counter. Count words, characters, sentences and paragraphs, and estimate reading and speaking time as you type.',
   },

@@ -6,28 +6,32 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-const pagePaths = [
-  '/',
-  '/calculators',
-  '/converters',
-  '/text-tools',
-  '/tools',
-  '/about',
-  '/contact',
-  '/privacy-policy',
-  '/terms',
-  '/disclaimer',
+// Update the date of a page here only when its content really changes.
+const pages: { path: string; lastModified: string }[] = [
+  { path: '/', lastModified: '2026-11-18' },
+  { path: '/calculators', lastModified: '2026-11-18' },
+  { path: '/converters', lastModified: '2026-11-18' },
+  { path: '/text-tools', lastModified: '2026-11-18' },
+  { path: '/tools', lastModified: '2026-11-18' },
+  { path: '/about', lastModified: '2026-11-18' },
+  { path: '/contact', lastModified: '2026-11-07' },
+  { path: '/privacy-policy', lastModified: '2026-11-18' },
+  { path: '/terms', lastModified: '2026-11-04' },
+  { path: '/disclaimer', lastModified: '2026-11-04' },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const pageEntries = pages.map((page) => ({
+    url: `${SITE_CONFIG.url}${page.path === '/' ? '' : page.path}`,
+    lastModified: new Date(page.lastModified),
+  }));
 
   // Tool pages come from the tool registry, so a new tool is added to the
   // sitemap automatically as soon as it is registered in data/tools.ts.
-  const toolPaths = getActiveTools().map((tool) => tool.slug);
-
-  return [...pagePaths, ...toolPaths].map((path) => ({
-    url: `${SITE_CONFIG.url}${path === '/' ? '' : path}`,
-    lastModified,
+  const toolEntries = getActiveTools().map((tool) => ({
+    url: `${SITE_CONFIG.url}${tool.slug}`,
+    lastModified: new Date(tool.updatedAt),
   }));
+
+  return [...pageEntries, ...toolEntries];
 }

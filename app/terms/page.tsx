@@ -5,25 +5,25 @@ import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Terms and Conditions | ToolSpace',
+  title: 'Terms and Conditions',
   description:
-    'Read the Terms and Conditions for using ToolSpace online calculators, converters, and other free tools.',
+    'Read the Terms and Conditions for using GetToolSpace online calculators, converters, and other free tools.',
   alternates: {
     canonical: '/terms',
   },
   openGraph: {
-    title: 'Terms and Conditions | ToolSpace',
+    title: 'Terms and Conditions | GetToolSpace',
     description:
-      'Read the Terms and Conditions for using ToolSpace online tools.',
+      'Read the Terms and Conditions for using GetToolSpace online tools.',
     url: `${SITE_CONFIG.url}/terms`,
     siteName: SITE_CONFIG.name,
     type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'Terms and Conditions | ToolSpace',
+    title: 'Terms and Conditions | GetToolSpace',
     description:
-      'Read the Terms and Conditions for using ToolSpace online tools.',
+      'Read the Terms and Conditions for using GetToolSpace online tools.',
   },
 };
 
@@ -50,9 +50,9 @@ export default function TermsPage() {
           </p>
 
           <p className={paragraphClass}>
-            Welcome to ToolSpace. These Terms and Conditions explain
+            Welcome to GetToolSpace. These Terms and Conditions explain
             the rules and guidelines for accessing and using our
-            website and its tools. By accessing or using ToolSpace,
+            website and its tools. By accessing or using GetToolSpace,
             you agree to these terms.
           </p>
         </header>
@@ -63,7 +63,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            By visiting or using ToolSpace, you acknowledge that
+            By visiting or using GetToolSpace, you acknowledge that
             you have read and understood these Terms and Conditions
             and agree to follow them. If you do not agree with
             these terms, please discontinue using the website.
@@ -72,11 +72,11 @@ export default function TermsPage() {
 
         <section className="space-y-3">
           <h2 className={sectionHeadingClass}>
-            2. About ToolSpace
+            2. About GetToolSpace
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace provides free online tools, including
+            GetToolSpace provides free online tools, including
             calculators, converters, and other utilities designed
             to help users perform everyday calculations and
             conversions.
@@ -94,7 +94,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            You agree to use ToolSpace only for lawful purposes.
+            You agree to use GetToolSpace only for lawful purposes.
             You must not:
           </p>
 
@@ -126,7 +126,7 @@ export default function TermsPage() {
           </p>
 
           <p className={paragraphClass}>
-            ToolSpace should not be considered a substitute for
+            GetToolSpace should not be considered a substitute for
             professional advice where such advice is necessary.
           </p>
         </section>
@@ -139,7 +139,7 @@ export default function TermsPage() {
           <p className={paragraphClass}>
             Unless otherwise stated, the website design, branding,
             text, graphics, and original content available on
-            ToolSpace are owned by or licensed to ToolSpace and
+            GetToolSpace are owned by or licensed to GetToolSpace and
             are protected by applicable intellectual property laws.
           </p>
 
@@ -157,7 +157,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace may contain links to third-party websites
+            GetToolSpace may contain links to third-party websites
             or use third-party services, including hosting,
             analytics, security, and advertising providers.
           </p>
@@ -177,7 +177,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            ToolSpace may display advertisements from third-party
+            GetToolSpace may display advertisements from third-party
             advertising providers, including Google AdSense,
             when advertising services are enabled.
           </p>
@@ -191,7 +191,7 @@ export default function TermsPage() {
 
           <p className={paragraphClass}>
             The presence of an advertisement does not constitute
-            an endorsement or guarantee by ToolSpace of the
+            an endorsement or guarantee by GetToolSpace of the
             advertised products or services. We are not
             responsible for third-party products, services,
             claims, or transactions.
@@ -209,7 +209,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            To the extent permitted by applicable law, ToolSpace
+            To the extent permitted by applicable law, GetToolSpace
             is provided on an &quot;as is&quot; and &quot;as available&quot; basis,
             without warranties of any kind, whether express
             or implied.
@@ -228,7 +228,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            To the extent permitted by applicable law, ToolSpace
+            To the extent permitted by applicable law, GetToolSpace
             and its operators shall not be liable for indirect,
             incidental, special, or consequential losses arising
             from the use of, or inability to use, the website
@@ -248,7 +248,7 @@ export default function TermsPage() {
           </h2>
 
           <p className={paragraphClass}>
-            Your use of ToolSpace is also subject to our
+            Your use of GetToolSpace is also subject to our
             Privacy Policy, which explains how information
             may be handled when you access our website.
           </p>
@@ -277,7 +277,7 @@ export default function TermsPage() {
           </p>
 
           <p className={paragraphClass}>
-            Your continued use of ToolSpace after updated terms
+            Your continued use of GetToolSpace after updated terms
             are published may be subject to those updated terms,
             to the extent permitted by applicable law.
           </p>

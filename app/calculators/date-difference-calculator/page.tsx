@@ -6,14 +6,14 @@ import BreadcrumbStructuredData from '@/components/seo/BreadcrumbStructuredData'
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Date Difference Calculator - Days Between Two Dates',
+  title: 'Days Between Dates Calculator',
   description:
     'Calculate the number of days, weeks, months and years between two dates, with a weekday and weekend count. Free online date calculator.',
   alternates: {
     canonical: '/calculators/date-difference-calculator',
   },
   openGraph: {
-    title: 'Date Difference Calculator - Days Between Two Dates',
+    title: 'Days Between Dates Calculator',
     description:
       'Calculate the number of days, weeks, months and years between two dates, with a weekday and weekend count. Free online date calculator.',
     url: `${SITE_CONFIG.url}/calculators/date-difference-calculator`,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Date Difference Calculator - Days Between Two Dates',
+    title: 'Days Between Dates Calculator',
     description:
       'Calculate the number of days, weeks, months and years between two dates, with a weekday and weekend count. Free online date calculator.',
   },

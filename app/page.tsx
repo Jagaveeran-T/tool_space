@@ -11,7 +11,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Free Online Calculators, Converters & Tools',
   description:
-    'Use free online calculators, converters and useful tools at ToolSpace. Calculate age, grades and convert binary numbers quickly and easily.',
+    'Free online calculators, converters and text tools at GetToolSpace: age, grade, percentage, date difference, word count, binary and hex.',
 
   alternates: {
     canonical: '/',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Online Calculators, Converters & Tools',
     description:
-      'Use free online calculators, converters and useful tools at ToolSpace. Calculate age, grades and convert binary numbers quickly and easily.',
+      'Free online calculators, converters and text tools at GetToolSpace: age, grade, percentage, date difference, word count, binary and hex.',
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Free Online Calculators, Converters & Tools',
     description:
-      'Use free online calculators, converters and useful tools at ToolSpace. Calculate age, grades and convert binary numbers quickly and easily.',
+      'Free online calculators, converters and text tools at GetToolSpace: age, grade, percentage, date difference, word count, binary and hex.',
   },
 };
 

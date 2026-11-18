@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 
 import { getToolsByCategory } from '@/data/tools';
@@ -55,8 +54,18 @@ export default function TextToolsPage() {
           Online Text Tools
         </h1>
 
-        <p className="mt-3 text-muted-foreground">
-          Count words and characters and check reading time with useful online tools.
+        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+          Text tools help you check the size of what you write. The
+          Word Counter counts words, characters, sentences and
+          paragraphs as you type, and estimates how long your text
+          takes to read or speak. It is useful for essays, articles,
+          speeches and any text with a word or character limit.
+        </p>
+
+        <p className="mt-3 max-w-3xl leading-7 text-muted-foreground">
+          Your text is processed in your browser and is not sent to our
+          server. The tool&apos;s guide explains how words and sentences
+          are counted, so you know how the numbers are produced.
         </p>
 
         <div className="mt-8">

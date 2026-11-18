@@ -5,14 +5,14 @@ import { SITE_CONFIG } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Read the ToolSpace Privacy Policy to understand how we handle information, cookies, advertising and user privacy.',
+    'Read the GetToolSpace Privacy Policy to understand how we handle information, cookies, advertising and user privacy.',
   alternates: {
     canonical: '/privacy-policy',
   },
   openGraph: {
     title: 'Privacy Policy',
     description:
-      'Learn how ToolSpace handles information, cookies, advertising and user privacy.',
+      'Learn how GetToolSpace handles information, cookies, advertising and user privacy.',
     url: `${SITE_CONFIG.url}/privacy-policy`,
     siteName: SITE_CONFIG.name,
     type: 'website',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Privacy Policy',
     description:
-      'Learn how ToolSpace handles information, cookies, advertising and user privacy.',
+      'Learn how GetToolSpace handles information, cookies, advertising and user privacy.',
   },
 };
 
@@ -53,14 +53,14 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            Welcome to ToolSpace. Your privacy is important to us.
+            Welcome to GetToolSpace. Your privacy is important to us.
             This Privacy Policy explains how information may be
             collected, used, disclosed and protected when you visit
             or use our website.
           </p>
 
           <p className={paragraphClass}>
-            By using ToolSpace, you acknowledge that you have read
+            By using GetToolSpace, you acknowledge that you have read
             this Privacy Policy. Where applicable, we will obtain
             your consent before processing information that
             requires consent under relevant privacy laws.
@@ -73,7 +73,7 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            ToolSpace provides online calculators, converters and
+            GetToolSpace provides online calculators, converters and
             other useful browser-based tools.
           </p>
 
@@ -127,7 +127,7 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            ToolSpace may use cookies and similar technologies
+            GetToolSpace may use cookies and similar technologies
             directly or through third-party services integrated
             into the website.
           </p>
@@ -155,12 +155,15 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <p className={paragraphClass}>
-            Analytics cookies, such as those used by Google Analytics,
-            are only enabled after you accept them in the cookie
-            banner. If you decline, analytics stays off. To change
-            your decision later, clear this site&apos;s cookies and
-            site data in your browser; the banner will then appear
-            again.
+            Where Google Analytics is enabled, it uses cookies to measure
+            how the site is used. For visitors in the European Economic
+            Area, the United Kingdom and Switzerland, analytics and ad
+            cookies are only used after you make a choice in the consent
+            message shown by our consent management platform. You can
+            change your choice at any time using the privacy and cookie
+            settings option provided by the consent message, where
+            available, or by clearing this site&apos;s cookies and site
+            data in your browser.
           </p>
         </section>
 
@@ -170,7 +173,7 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            ToolSpace may display advertisements through Google
+            GetToolSpace may display advertisements through Google
             AdSense or other third-party advertising providers.
             Advertising services may not be active on the website
             at all times.
@@ -245,7 +248,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <p className={paragraphClass}>
-            Where required, ToolSpace will implement appropriate
+            Where required, GetToolSpace will implement appropriate
             consent mechanisms to allow visitors to manage their
             choices regarding cookies, personalized advertising
             and other applicable data processing activities. For
@@ -262,7 +265,7 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            ToolSpace may use third-party services for website
+            GetToolSpace may use third-party services for website
             hosting, security, analytics, performance monitoring
             and advertising.
           </p>
@@ -305,7 +308,7 @@ export default function PrivacyPolicyPage() {
           </h2>
 
           <p>
-            ToolSpace is intended for a general audience.
+            GetToolSpace is intended for a general audience.
             We do not knowingly collect personal information
             directly from children without appropriate
             authorization where required by law.

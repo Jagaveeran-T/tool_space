@@ -8,7 +8,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 const path = '/converters/decimal-to-hex';
 const pageUrl = `${SITE_CONFIG.url}${path}`;
 
-const pageTitle = 'Decimal to Hex Converter - Convert to Hexadecimal';
+const pageTitle = 'Decimal to Hex Converter - Base 10 to Base 16';
 
 const pageDescription =
   'Free online decimal to hex converter. Convert any whole number to hexadecimal instantly, with binary and octal results, 0x prefix and large number support.';
