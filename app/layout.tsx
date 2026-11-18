@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -41,12 +42,15 @@ export const metadata: Metadata = {
   description: SITE_CONFIG.description,
   applicationName: SITE_CONFIG.name,
 
-  // Verification meta tag: <meta name="google-adsense-account" content="..." />
-  other: ADSENSE_CLIENT
-    ? {
-        'google-adsense-account': ADSENSE_CLIENT,
-      }
-    : {},
+  // Google AdSense + Bing Webmaster Tools verification
+  other: {
+    ...(ADSENSE_CLIENT
+      ? {
+          'google-adsense-account': ADSENSE_CLIENT,
+        }
+      : {}),
+    'msvalidate.01': 'ED6956B0512BFECE7D9FF2384BF818FE',
+  },
 
   openGraph: {
     title: `${SITE_CONFIG.name} | Free Online Tools`,
