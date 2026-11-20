@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getActiveTools } from '@/data/tools';
+import { articles } from '@/data/articles';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const dynamic = 'force-static';
@@ -13,6 +14,7 @@ const pages: { path: string; lastModified: string }[] = [
   { path: '/converters', lastModified: '2026-11-18' },
   { path: '/text-tools', lastModified: '2026-11-18' },
   { path: '/tools', lastModified: '2026-11-18' },
+  { path: '/guides', lastModified: '2026-11-20' },
   { path: '/about', lastModified: '2026-11-18' },
   { path: '/contact', lastModified: '2026-11-07' },
   { path: '/privacy-policy', lastModified: '2026-11-18' },
@@ -33,5 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(tool.updatedAt),
   }));
 
-  return [...pageEntries, ...toolEntries];
+  // Guides come from data/articles.ts.
+  const articleEntries = articles.map((article) => ({
+    url: `${SITE_CONFIG.url}/guides/${article.slug}`,
+    lastModified: new Date(article.updatedAt),
+  }));
+
+  return [...pageEntries, ...toolEntries, ...articleEntries];
 }

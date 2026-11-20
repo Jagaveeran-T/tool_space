@@ -6,6 +6,7 @@ import PopularTools from '@/components/home/PopularTools';
 import Categories from '@/components/home/Categories';
 import RecentlyAdded from '@/components/home/RecentlyAdded';
 import FAQSection from '@/components/home/FAQSection';
+import SiteIntro from '@/components/home/SiteIntro';
 import { SITE_CONFIG } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function HomePage() {
 
       <Categories />
       <RecentlyAdded />
+      <SiteIntro />
       <FAQSection />
     </>
   );

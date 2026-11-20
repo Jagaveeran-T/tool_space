@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Calculators', href: '/calculators' },
   { name: 'Converters', href: '/converters' },
   { name: 'Text Tools', href: '/text-tools' },
+  { name: 'Guides', href: '/guides' },
   { name: 'All Tools', href: '/tools' },
 ];
 

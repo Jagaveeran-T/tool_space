@@ -9,6 +9,7 @@ import Footer from '@/components/layout/Footer';
 import ThemeProvider from '@/components/providers/ThemeProvider';
 import { SITE_CONFIG } from '@/lib/constants';
 import StructuredData from '@/components/seo/StructuredData';
+import ConsentBanner from '@/components/common/ConsentBanner';
 
 // Environment variables
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID?.trim();
@@ -148,6 +149,7 @@ export default function RootLayout({
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          {GA_ID && <ConsentBanner />}
         </ThemeProvider>
       </body>
     </html>

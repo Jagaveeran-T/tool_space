@@ -21,8 +21,8 @@ export const SITE_CONFIG = {
   // Shown on the About page only when filled in. Add your real name or
   // team name and a short sentence about why you built the site.
   owner: {
-    name: '',
-    about: '',
+    name: 'Jagaveeran',
+    about: 'I build GetToolSpace because I wanted calculators that show their working. I test each tool against hand-calculated examples before publishing it.',
   },
 };
 
@@ -46,5 +46,9 @@ export const NAVIGATION_ITEMS = [
   {
     label: 'All Tools',
     href: '/tools',
+  },
+  {
+    label: 'Guides',
+    href: '/guides',
   },
 ];
